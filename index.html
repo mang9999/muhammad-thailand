@@ -19,13 +19,12 @@
 
 
     
-      <div class="container" style="margin-top: 20px;">
+    <div class="container" style="margin-top: 20px;">
         <div class="row" style="margin-top: 20px;">
-                <button onclick="copyscript1()">HOW TO FIND UUID</button>
+                <button onclick="copyscript1()">copy script แสดงข้อมูล User</button>
             <div class="col-xs-12 col-sm-12">
-            <textarea readonly name="" id="paint-script1" cols="50" rows="2"> 1. GO TO WEBSITES https://popdog.click/uuid
-            2. RESET WEBSITES = 1UUID
-            3. 1 IP/VPN = 20UUID ONLY</textarea>
+            <textarea readonly name="" id="paint-script1" cols="50" rows="2">console.log('UUID: ',uuid);console.log('USERNAME: ',username);localStorage.clear();
+            </textarea>
         </div>
           
        
@@ -36,19 +35,19 @@
                 <div class="form-group">
                     <div><label for="">uuid</label></div>
                     <input type="text" id="uuid">
-                    <div id="uuiderror" class="error ui-hidden">Your uuid</div>
+                    <div id="uuiderror" class="error ui-hidden">โปลดใส่ uuid</div>
                 </div>
                 <div class="form-group">
-                    <div><label for="">username</label></div>
+                    <div><label for="">ไม่ต้องใส่ชื่อเด้อ</label></div>
                     <input type="text" id="username">
-                    <div id="usernameerror"class="error ui-hidden">Your username</div>
+                    <div id="usernameerror"class="error ui-hidden">โปลดใส่ username</div>
                 </div>
-                <button class="btn" id="add">ADD </button>
-                <button class="btn" id="genscript">Check script</button>
+                <button class="btn" id="add">ADD + </button>
+                <button class="btn" id="genscript">Genscript</button>
 
                 <div class="row" style="margin-top: 20px;">
                     <div class="col-xs-12 col-sm-12"">
-                        <button onclick="copyscript2()">copy script </button>
+                        <button onclick="copyscript2()">copy script Run Point</button>
                     </div>
                     <div class="col-xs-12 col-sm-12">
                     <textarea readonly name="" id="paint-script" cols="50" rows="10"></textarea>
@@ -58,7 +57,7 @@
                 </div>
             </div>
             <div class="col-xs-6 col-sm-6">
-			<div><label>show All uuid</label></div>
+			<div><label>หน้าจอแสดง ID ทั้งหมดของคุณที่มี</label></div>
                 <ul id="listuuid" style="height: 300px;
                 overflow: auto;    background-color: black;
     color: green; padding: 10px; border-radius: 5px;">
@@ -85,7 +84,7 @@
             $('#uuiderror').addClass('ui-hidden');
         }
         var username=$('#username').val();
-        if(username==""){
+        if(username=="TTT"){
             $('#usernameerror').removeClass('ui-hidden');
             return false;
         }else{
@@ -117,7 +116,7 @@ function copyscript2(){
 
 /* Select the text field */
 copyText.select();
-copyText.setSelectionRange(0, 99999999999999999999); /* For mobile devices */
+copyText.setSelectionRange(0, 3998); /* For mobile devices */
 
 /* Copy the text inside the text field */
 navigator.clipboard.writeText(copyText.value);
@@ -140,7 +139,7 @@ alert("Copied the text: " + copyText.value);
          
     }
     $(document).on('click','.remove',function(){
-        $().parent().remove();
+        $(this).parent().remove();
         $('#genscript').click();
         });
     
@@ -167,7 +166,7 @@ alert("Copied the text: " + copyText.value);
      
         sciprt+='body: JSON.stringify({';
   
-        sciprt+='clicks: 999999999999999,';
+        sciprt+='clicks: 3998,';
       
         sciprt+='uuid: packid[i][0],';
        
@@ -185,7 +184,7 @@ alert("Copied the text: " + copyText.value);
       
         sciprt+='  })';
       
-        sciprt+=' }},16999)';
+        sciprt+=' }},17000)';
       
 	  if($('#listuuid li').length==0){
 	      $('#paint-script').text('');
